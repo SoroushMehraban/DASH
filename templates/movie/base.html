@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASH - Dynamic Adaptive Streaming over HTTP</title>
+    <link rel="stylesheet" href="{% static 'movie/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/style.css' %}">
+</head>
+<body class="bg-dark">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/"></i><strong>DASH</strong> - Dynamic Adaptive Streaming over HTTP</a>
+</nav>
+{% block content %}{% endblock %}
+
+<script src="{% static 'movie/js/jquery.min.js' %}"></script>
+<script src="{% static 'movie/js/popper.min.js' %}"></script>
+<script src="{% static 'movie/js/bootstrap.min.js' %}"></script>
+
+{% block script %}{% endblock %}
+</body>
+</html>

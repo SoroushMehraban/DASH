@@ -1,0 +1,30 @@
+{% extends "movie/base.html" %}
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="alert alert-success"> {{ message }}</div>
+            {% else %}
+                <div class="alert alert-danger"> {{ message }}</div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            {% for movie in movies %}
+                <div class="col-lg-3 mx-2 mb-2">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ movie.poster.url }}" alt="{{ movie.poster }}">
+                        <div class="card-body">
+                            <p class="card-text mb-0"><b>{{ movie.name }}</b></p>
+                            <p class="card-text small mt-0"><b>Director:</b> {{ movie.director_name }}</p>
+                            <div class="container text-center">
+                                <a href="" class="btn btn-info"><i class="fa fa-eye"></i> View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
