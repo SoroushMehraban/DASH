@@ -1,2 +1,6 @@
 Django
 Pillow
+tzdata
+python-ffmpeg-video-streaming>=0.1
+gunicorn
+

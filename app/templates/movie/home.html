@@ -19,7 +19,7 @@
                             <p class="card-text mb-0"><b>{{ movie.name }}</b></p>
                             <p class="card-text small mt-0"><b>Director:</b> {{ movie.director_name }}</p>
                             <div class="container text-center">
-                                <a href="{% url 'movie' movie_id=movie.id %}" class="btn btn-info"><i class="fa fa-eye"></i> View</a>
+                                <a href="{% url 'movies' movie_id=movie.id %}" class="btn btn-info"><i class="fa fa-eye"></i> View</a>
                             </div>
                         </div>
                     </div>
