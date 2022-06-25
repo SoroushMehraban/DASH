@@ -1,0 +1,29 @@
+{% extends "movie/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 mx-2 mt-4 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1>{{ movie.name }}</h1>
+                        </div>
+                        <div class="col-md-4 my-2 text-center">
+                            <h3><i class="fa fa-star text-warning"></i> <strong>{{ movie.rate }}</strong> / 10</h3>
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-xl-3">
+                            <img width="200" src="{{ movie.poster.url }}" alt="Card image cap">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p><span class="badge badge-secondary"><b><i class="fa fa-pencil"></i> Description</b></span> {{ movie.description }}</p>
+                        <p><span class="badge badge-secondary"><b><i class="fa fa-video-camera"></i> Director</b></span> {{ movie.director_name }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
