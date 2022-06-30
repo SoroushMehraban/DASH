@@ -14,8 +14,8 @@ In this project, we have used DASH and HLS protocols for streaming trailer video
 - [x] Designing frontend with bootstrap 4
 - [x] Dockerizing the project with Nginx and Gunicorn
 - [x] Using DASH protocol for streaming two trailers from local
-- [ ] Using DASH protocol for streaming two trailers from CDN
-- [ ] Using HLS protocol for streaming two trailers from CDN
+- [x] Using DASH protocol for streaming two trailers from CDN
+- [x] Using HLS protocol for streaming two trailers from CDN
 
 ## Project setup
 ```text
