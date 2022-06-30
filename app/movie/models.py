@@ -11,6 +11,8 @@ class Movie(models.Model):
         MinValueValidator(0)
     ])
     description = models.TextField()
+    dash_mode = models.BooleanField(default=False)
+    trailer_link = models.URLField(null=True)
 
     def __str__(self):
         return self.name

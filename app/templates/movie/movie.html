@@ -15,15 +15,37 @@
                     </div>
                     <div class="row my-2">
                         <div class="col-xl-3">
-                            <img width="200" src="{{ movie.poster.url }}" alt="Card image cap">
+                            <img class="embed-responsive" src="{{ movie.poster.url }}" alt="Card image cap">
+                        </div>
+                        <div class="col-xl-9">
+                            <video class="embed-responsive embed-responsive-16by9" id="VideoPlayer" controls>
+                            </video>
                         </div>
                     </div>
                     <div class="row">
-                        <p><span class="badge badge-secondary"><b><i class="fa fa-pencil"></i> Description</b></span> {{ movie.description }}</p>
-                        <p><span class="badge badge-secondary"><b><i class="fa fa-video-camera"></i> Director</b></span> {{ movie.director_name }}</p>
+                        <p><span class="badge badge-secondary"><b><i
+                                class="fa fa-pencil"></i> Description</b></span> {{ movie.description }}</p>
+                        <p><span class="badge badge-secondary"><b><i
+                                class="fa fa-video-camera"></i> Director</b></span> {{ movie.director_name }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 {% endblock content %}
+
+{% block script %}
+{% if movie.dash_mode %}
+    <script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <script>
+        var url = "{{ movie.trailer_link }}";
+        var player = dashjs.MediaPlayer().create();
+        player.initialize(document.querySelector("#VideoPlayer"), url, true);
+    </script>
+{% else %}
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <script>
+        // HLS MODE CODES HERE
+    </script>
+{% endif %}
+{% endblock %}
