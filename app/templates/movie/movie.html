@@ -45,7 +45,16 @@
 {% else %}
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
     <script>
-        // HLS MODE CODES HERE
+        var video = document.getElementById('VideoPlayer');
+        var videoSrc = '{{ movie.trailer_link }}';
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(videoSrc);
+          hls.attachMedia(video);
+        }
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = videoSrc;
+        }
     </script>
 {% endif %}
 {% endblock %}
